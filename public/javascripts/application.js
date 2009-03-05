@@ -10,17 +10,18 @@ $(function() {
     var input = $(event.target)
     var parentWrapper = input.parent()
     var requiredCommandDiv = parentWrapper.children(".requirements")
-    var requiredCommandInputs = requiredCommandDiv.children("input[type=checkbox]")
+    var requiredCommandInputs = requiredCommandDiv.children("input")
     
     // Make the other boxes check/uncheck with this one
-    $("input[value=" + input.val() + "]").attr({checked: input.attr("checked")})
+    // $("input[value=" + input.val() + "]").attr({checked: input.attr("checked")})
     
     // Fix up the required commands
     if(input.attr("checked")) {
       requiredCommandDiv.show()
+      console.log(requiredCommandDiv)
       requiredCommandInputs.attr({checked: true})
     } else {
-      requiredCommandDiv.hide()
+      //requiredCommandDiv.hide()
       requiredCommandInputs.attr({checked: false})
     }
     
