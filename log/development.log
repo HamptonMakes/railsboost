@@ -3006,3 +3006,1300 @@ Rendering templates/show
   [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 3) AND ("commands"."type" = 'GenerateCommand')) [0m
 Completed in 24ms (View: 17, DB: 0) | 200 OK [http://localhost/templates/3]
 ** acts_as_taggable_on: initialized properly.
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:44:30) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;36;1mCommand Load (0.3ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.command_name) on line #7 of app/views/templates/new.html.haml:
+4:   %fieldset
+5:     %legend Pick Your Templating Language
+6:     = check_box_for "haml"
+7:     = check_box_for "markaby"
+8:     = check_box_for "erubis"
+9:   %fieldset
+10:     %legend Pick Your Javascript Framework
+
+    app/helpers/templates_helper.rb:12:in `check_box_for'
+    app/views/templates/new.html.haml:7
+    vendor/plugins/haml/lib/haml/helpers/action_view_mods.rb:157:in `call'
+    vendor/plugins/haml/lib/haml/helpers/action_view_mods.rb:157:in `form_for'
+    vendor/plugins/haml/lib/haml/helpers.rb:392:in `call'
+    vendor/plugins/haml/lib/haml/helpers.rb:392:in `haml_bind_proc'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/form_helper.rb:313:in `fields_for'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/form_helper.rb:253:in `form_for_without_haml'
+    vendor/plugins/haml/lib/haml/helpers/action_view_mods.rb:161:in `form_for'
+    app/views/templates/new.html.haml:3
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:256:in `render_without_haml'
+    vendor/plugins/haml/lib/haml/helpers/action_view_mods.rb:6:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:367:in `_render_with_layout'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:254:in `render_without_haml'
+    vendor/plugins/haml/lib/haml/helpers/action_view_mods.rb:6:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1174:in `render_for_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1248:in `default_render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1254:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `sass_old_process'
+    vendor/plugins/haml/lib/sass/plugin/rails.rb:19:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (36.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (1.0ms)
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:47:00) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.command_name) on line #7 of app/views/templates/new.html.haml:
+4:   %fieldset
+5:     %legend Pick Your Templating Language
+6:     = check_box_for "haml"
+7:     = check_box_for "markaby"
+8:     = check_box_for "erubis"
+9:   %fieldset
+10:     %legend Pick Your Javascript Framework
+
+    app/helpers/templates_helper.rb:12:in `check_box_for'
+    app/views/templates/new.html.haml:7
+    vendor/plugins/haml/lib/haml/helpers/action_view_mods.rb:157:in `call'
+    vendor/plugins/haml/lib/haml/helpers/action_view_mods.rb:157:in `form_for'
+    vendor/plugins/haml/lib/haml/helpers.rb:392:in `call'
+    vendor/plugins/haml/lib/haml/helpers.rb:392:in `haml_bind_proc'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/form_helper.rb:313:in `fields_for'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/form_helper.rb:253:in `form_for_without_haml'
+    vendor/plugins/haml/lib/haml/helpers/action_view_mods.rb:161:in `form_for'
+    app/views/templates/new.html.haml:3
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:256:in `render_without_haml'
+    vendor/plugins/haml/lib/haml/helpers/action_view_mods.rb:6:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:367:in `_render_with_layout'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:254:in `render_without_haml'
+    vendor/plugins/haml/lib/haml/helpers/action_view_mods.rb:6:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1174:in `render_for_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1248:in `default_render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1254:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `sass_old_process'
+    vendor/plugins/haml/lib/sass/plugin/rails.rb:19:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (40.2ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (0.8ms)
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:49:32) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;36;1mCommand Load (0.3ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'erubis') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-min') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-ui') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-form') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-autocomplete') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'prototype') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'factory_girl') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+Completed in 45ms (View: 37, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:50:34) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'erubis') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-min') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-ui') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-form') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-autocomplete') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'prototype') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'factory_girl') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'make_resourceful') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'resource_controller') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+Completed in 45ms (View: 40, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:51:44) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;35;1mCommand Load (0.4ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+  [4;36;1mCommand Load (0.3ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'erubis') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-min') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-ui') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-form') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-autocomplete') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'prototype') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'factory_girl') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'make_resourceful') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'resource_controller') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+Completed in 154ms (View: 149, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:52:07) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'erubis') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-min') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-ui') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-form') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-autocomplete') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'prototype') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'factory_girl') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'make_resourceful') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'resource_controller') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+Completed in 46ms (View: 39, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:53:36) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+  [4;36;1mCommand Load (0.3ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'erubis') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-min') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-ui') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-form') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-autocomplete') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'prototype') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'factory_girl') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'make_resourceful') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'resource_controller') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+Completed in 46ms (View: 40, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:53:47) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'erubis') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-min') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-ui') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-form') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-autocomplete') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'prototype') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'factory_girl') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.4ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'make_resourceful') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'resource_controller') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+Completed in 45ms (View: 39, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:54:13) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'erubis') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-min') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-ui') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-form') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-autocomplete') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'prototype') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'factory_girl') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'make_resourceful') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'resource_controller') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+Completed in 44ms (View: 39, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:54:15) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'erubis') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-min') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-ui') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-form') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-autocomplete') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'prototype') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'factory_girl') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'make_resourceful') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'resource_controller') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+Completed in 151ms (View: 146, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:54:27) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+  [4;36;1mCommand Load (0.4ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'erubis') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-min') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-ui') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-form') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-autocomplete') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'prototype') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'factory_girl') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'make_resourceful') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'resource_controller') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+Completed in 47ms (View: 41, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:55:06) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'erubis') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-min') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-ui') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-form') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-autocomplete') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'prototype') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'factory_girl') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'make_resourceful') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'resource_controller') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+Completed in 40ms (View: 35, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:55:07) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'erubis') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-min') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-ui') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.3ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-form') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-autocomplete') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'prototype') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'factory_girl') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'make_resourceful') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'resource_controller') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+Completed in 47ms (View: 39, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:55:11) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'erubis') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-min') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-ui') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-form') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-autocomplete') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'prototype') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'factory_girl') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'make_resourceful') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'resource_controller') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+Completed in 43ms (View: 37, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:55:28) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'erubis') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-min') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-ui') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-form') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-autocomplete') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'prototype') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'factory_girl') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.3ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'make_resourceful') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'resource_controller') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+Completed in 149ms (View: 143, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:55:30) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'erubis') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-min') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-ui') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-form') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-autocomplete') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'prototype') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'factory_girl') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'make_resourceful') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'resource_controller') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+Completed in 49ms (View: 42, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:55:46) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'erubis') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-min') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-ui') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-form') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-autocomplete') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'prototype') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'factory_girl') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'make_resourceful') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'resource_controller') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+Completed in 49ms (View: 43, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:55:55) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'erubis') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-min') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-ui') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-form') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-autocomplete') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'prototype') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'factory_girl') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'make_resourceful') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'resource_controller') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+Completed in 44ms (View: 38, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:56:04) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'erubis') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-min') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-ui') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-form') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-autocomplete') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'prototype') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.6ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'factory_girl') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'make_resourceful') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'resource_controller') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+Completed in 50ms (View: 44, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:56:12) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'erubis') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-min') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-ui') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-form') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-autocomplete') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'prototype') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'factory_girl') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'make_resourceful') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'resource_controller') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+Completed in 151ms (View: 145, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:56:42) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'erubis') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-min') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-ui') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-form') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-autocomplete') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'prototype') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mCommand Load (0.4ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'factory_girl') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'make_resourceful') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'resource_controller') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+Completed in 43ms (View: 38, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:56:54) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'erubis') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-min') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-ui') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-form') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-autocomplete') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'prototype') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'factory_girl') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'make_resourceful') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'resource_controller') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+Completed in 46ms (View: 41, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:57:04) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'erubis') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-min') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-ui') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-form') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-autocomplete') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'prototype') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'factory_girl') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.3ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'make_resourceful') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'resource_controller') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+Completed in 47ms (View: 41, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:57:35) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'erubis') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-min') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-ui') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-form') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-autocomplete') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'prototype') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'factory_girl') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'make_resourceful') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'resource_controller') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+Completed in 44ms (View: 38, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:58:48) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'markaby') LIMIT 1[0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'erubis') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-min') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-ui') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-form') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'jquery-autocomplete') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'prototype') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mCommand Load (0.3ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT * FROM "commands" WHERE ("commands"."name" = 'factory_girl') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "commands" LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.3ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'make_resourceful') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'resource_controller') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "commands" LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 1)) [0m
+Completed in 148ms (View: 143, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#show to rb (for 127.0.0.1 at 2009-03-05 17:02:49) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mTemplate Load (0.2ms)[0m   [0mSELECT * FROM "templates" WHERE ("templates"."id" = 2) [0m
+Completed in 8ms (View: 0, DB: 0) | 406 Not Acceptable [http://localhost/templates/2.rb]
+
+
+Processing TemplatesController#show to rb (for 127.0.0.1 at 2009-03-05 17:03:01) [GET]
+  Parameters: {"id"=>"2-hamptons"}
+  [4;36;1mTemplate Load (0.2ms)[0m   [0;1mSELECT * FROM "templates" WHERE ("templates"."id" = 2) [0m
+Completed in 8ms (View: 0, DB: 0) | 406 Not Acceptable [http://localhost/templates/2-hamptons.rb]
+
+
+Processing TemplatesController#show to rb (for 127.0.0.1 at 2009-03-05 17:04:22) [GET]
+  Parameters: {"id"=>"2-hamptons"}
+  [4;35;1mTemplate Load (0.2ms)[0m   [0mSELECT * FROM "templates" WHERE ("templates"."id" = 2) [0m
+  [4;36;1mCommand Load (0.4ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'PluginCommand')) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'GemCommand')) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'RakeCommand')) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'GenerateCommand')) [0m
+Completed in 23ms (View: 0, DB: 1) | 200 OK [http://localhost/templates/2-hamptons.rb]
+
+
+Processing TemplatesController#show to rb (for 127.0.0.1 at 2009-03-05 17:04:36) [GET]
+  Parameters: {"id"=>"2-hamptons"}
+  [4;36;1mTemplate Load (0.2ms)[0m   [0;1mSELECT * FROM "templates" WHERE ("templates"."id" = 2) [0m
+  [4;35;1mCommand Load (0.4ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'PluginCommand')) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'GemCommand')) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'RakeCommand')) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'GenerateCommand')) [0m
+Completed in 124ms (View: 0, DB: 1) | 200 OK [http://localhost/templates/2-hamptons.rb]
+
+
+Processing TemplatesController#show to rb (for 127.0.0.1 at 2009-03-05 17:04:47) [GET]
+  Parameters: {"id"=>"2-hamptons"}
+  [4;35;1mTemplate Load (0.2ms)[0m   [0mSELECT * FROM "templates" WHERE ("templates"."id" = 2) [0m
+  [4;36;1mCommand Load (0.5ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'PluginCommand')) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'GemCommand')) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'RakeCommand')) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'GenerateCommand')) [0m
+Completed in 23ms (View: 0, DB: 1) | 200 OK [http://localhost/templates/2-hamptons.rb]
+
+
+Processing TemplatesController#show to rb (for 127.0.0.1 at 2009-03-05 17:05:45) [GET]
+  Parameters: {"id"=>"2-hamptons"}
+  [4;36;1mTemplate Load (0.2ms)[0m   [0;1mSELECT * FROM "templates" WHERE ("templates"."id" = 2) [0m
+  [4;35;1mCommand Load (0.5ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'PluginCommand')) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'GemCommand')) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'RakeCommand')) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'GenerateCommand')) [0m
+Completed in 24ms (View: 0, DB: 1) | 200 OK [http://localhost/templates/2-hamptons.rb]
+
+
+Processing TemplatesController#show to rb (for 127.0.0.1 at 2009-03-05 17:05:52) [GET]
+  Parameters: {"id"=>"2-hamptons"}
+  [4;35;1mTemplate Load (0.3ms)[0m   [0mSELECT * FROM "templates" WHERE ("templates"."id" = 2) [0m
+  [4;36;1mCommand Load (0.4ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'PluginCommand')) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'GemCommand')) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'RakeCommand')) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'GenerateCommand')) [0m
+Completed in 21ms (View: 0, DB: 1) | 200 OK [http://localhost/templates/2-hamptons.rb]
+
+
+Processing TemplatesController#show to rb (for 127.0.0.1 at 2009-03-05 17:06:06) [GET]
+  Parameters: {"id"=>"2-hamptons"}
+  [4;36;1mTemplate Load (0.2ms)[0m   [0;1mSELECT * FROM "templates" WHERE ("templates"."id" = 2) [0m
+  [4;35;1mCommand Load (0.7ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'PluginCommand')) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'GemCommand')) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'RakeCommand')) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'GenerateCommand')) [0m
+Completed in 124ms (View: 0, DB: 1) | 200 OK [http://localhost/templates/2-hamptons.rb]

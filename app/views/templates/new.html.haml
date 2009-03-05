@@ -1,7 +1,28 @@
 %h2 Create A New Template
 
 - form_for @rails_template do |f|
-  = check_box_for "haml"
-  = check_box_for "rspec-rails"
-  = check_box_for "rspec"
-  = submit_tag "Create"
+  %fieldset
+    %legend Pick Your Templating Language
+    = check_box_for "haml"
+    = check_box_for "markaby"
+    = check_box_for "erubis"
+  %fieldset
+    %legend Pick Your Javascript Framework
+    = check_box_for "jquery"
+    = check_box_for "jquery-min"
+    = check_box_for "jquery-ui"
+    = check_box_for "jquery-form"
+    = check_box_for "jquery-autocomplete"
+    = check_box_for "prototype"
+  %fieldset
+    %legend Testing Frameworks
+    = check_box_for "rspec-rails"
+  %fieldset
+    %legend Fixture Plugins
+    = check_box_for "factory_girl"
+  %fieldset
+    %legend Resource Plugin
+    = check_box_for "make_resourceful"
+    = check_box_for "resource_controller"
+    
+  = submit_tag "Generate Template"

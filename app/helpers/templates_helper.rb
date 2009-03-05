@@ -3,14 +3,14 @@ module TemplatesHelper
     
     # Pass in either a Command or a string of its name
     if name_or_command.is_a?(String)
-      command = Command.find_by_name(name_or_command) 
+      command = Command.find_by_name(name_or_command) || Command.first
     else
       command = name_or_command
     end
     
     # Build the checkbox for this particular one
     haml_tag :div, :class => "command #{command.command_name}" do
-      puts check_box_tag("template[command_ids][]", command.id, false, :command_id => command.id)
+      puts check_box_tag("template[command_ids][]", command.id, false, :command_id => command.id, :id => nil)
       haml_tag :label, "#{command.name} #{command.command_name}"
       
       if command.required_commands.any?
@@ -21,5 +21,7 @@ module TemplatesHelper
         end
       end
     end
+    
+    nil
   end
 end
