@@ -1,0 +1,22 @@
+Permalize
+==========
+
+Following after some Ruby and Rails conventions, such as camelize, pluralize, titleize, etc, I've created permalize. Basically, it takes any string and makes it into a permanent link. See the examples below.
+
+Example
+=======
+
+There are two ways you can use this plugin. 1)
+
+string = "Here is the new string"
+new_string = string.permalize
+
+new_string will now be permalized, but string will still be "Here is the new string"
+
+2)
+
+string = "Here is the new string"
+string.permlize!
+
+
+Copyright (c) 2007 Robert R Evans, released under the MIT license

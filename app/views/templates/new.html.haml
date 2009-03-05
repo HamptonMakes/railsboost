@@ -1,0 +1,7 @@
+%h2 Create A New Template
+
+- form_for @rails_template do |f|
+  = check_box_for "haml"
+  = check_box_for "rspec-rails"
+  = check_box_for "rspec"
+  = submit_tag "Create"

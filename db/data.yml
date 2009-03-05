@@ -1,0 +1,142 @@
+
+--- 
+commands: 
+  columns: 
+  - id
+  - type
+  - permalink
+  - name
+  - options
+  - script
+  - created_at
+  - updated_at
+  records: 
+  - - "1"
+    - PluginCommand
+    - make-resourceful
+    - make_resourceful
+    - "--- \n\
+      :git: git://github.com/hcatlin/make_resourceful.git\n"
+    - 
+    - 2009-03-05 18:49:44
+    - 2009-03-05 18:49:44
+  - - "2"
+    - 
+    - 
+    - delete_default_files
+    - 
+    - |-
+      run "rm README"
+        run "rm public/index.html"
+        run "rm public/favicon.ico"
+        run "rm public/robots.txt"
+        run "rm -f public/javascripts/*"
+    - 2009-03-05 19:17:30
+    - 2009-03-05 19:17:30
+  - - "3"
+    - PluginCommand
+    - rspec-rails
+    - rspec-rails
+    - "--- \n\
+      :git: git://github.com/dchelimsky/rspec-rails.git\n"
+    - 
+    - 2009-03-05 19:19:19
+    - 2009-03-05 19:19:19
+  - - "4"
+    - PluginCommand
+    - rspec
+    - rspec
+    - "--- \n\
+      :git: git://github.com/dchelimsky/rspec.git\n"
+    - 
+    - 2009-03-05 19:19:44
+    - 2009-03-05 19:19:44
+  - - "5"
+    - PluginCommand
+    - haml
+    - haml
+    - "--- \n\
+      :git: git://github.com/nex3/haml.git\n"
+    - 
+    - 2009-03-05 20:31:36
+    - 2009-03-05 20:31:36
+
+--- 
+dependencies: 
+  columns: 
+  - id
+  - command_id
+  - required_command_id
+  - created_at
+  - updated_at
+  records: 
+  - - "1"
+    - "3"
+    - "4"
+    - 2009-03-05 19:32:21
+    - 2009-03-05 19:32:21
+
+--- 
+templates: 
+  columns: 
+  - id
+  - name
+  - global_options
+  - created_at
+  - updated_at
+  records: 
+  - - "1"
+    - 
+    - 
+    - 2009-03-05 20:36:34
+    - 2009-03-05 20:36:34
+  - - "2"
+    - 
+    - 
+    - 2009-03-05 21:05:27
+    - 2009-03-05 21:05:27
+  - - "3"
+    - 
+    - 
+    - 2009-03-05 21:27:35
+    - 2009-03-05 21:27:35
+
+--- 
+template_commands: 
+  columns: 
+  - id
+  - template_id
+  - command_id
+  - created_at
+  - updated_at
+  records: 
+  - - "1"
+    - "1"
+    - "3"
+    - 2009-03-05 20:36:34
+    - 2009-03-05 20:36:34
+  - - "2"
+    - "1"
+    - "5"
+    - 2009-03-05 20:36:34
+    - 2009-03-05 20:36:34
+  - - "3"
+    - "2"
+    - "3"
+    - 2009-03-05 21:05:27
+    - 2009-03-05 21:05:27
+  - - "4"
+    - "2"
+    - "4"
+    - 2009-03-05 21:05:27
+    - 2009-03-05 21:05:27
+  - - "5"
+    - "2"
+    - "5"
+    - 2009-03-05 21:05:27
+    - 2009-03-05 21:05:27
+  - - "6"
+    - "3"
+    - "3"
+    - 2009-03-05 21:27:35
+    - 2009-03-05 21:27:35

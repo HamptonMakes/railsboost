@@ -1,0 +1,2 @@
+class RakeCommand < Command
+end

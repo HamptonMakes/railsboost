@@ -1,0 +1,1 @@
+# Uninstall hook goes here

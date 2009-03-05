@@ -2920,3 +2920,89 @@ Rendering templates/show
   [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'RakeCommand')) [0m
   [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'GenerateCommand')) [0m
 Completed in 30ms (View: 21, DB: 0) | 200 OK [http://localhost/templates/2]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:24:47) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;36;1mCommand Load (0.3ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+Completed in 134ms (View: 128, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:25:59) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;36;1mCommand Load (0.3ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mCommand Load (0.4ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+Completed in 33ms (View: 26, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:26:26) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;36;1mCommand Load (0.3ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mCommand Load (0.3ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+Completed in 29ms (View: 23, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:27:05) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;36;1mCommand Load (0.3ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+Completed in 131ms (View: 124, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#new (for 127.0.0.1 at 2009-03-05 16:27:31) [GET]
+Rendering template within layouts/application
+Rendering templates/new
+  [4;36;1mCommand Load (0.3ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'haml') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 5)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec-rails') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 3)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."name" = 'rspec') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "commands" INNER JOIN dependencies ON commands.id = dependencies.required_command_id WHERE (("dependencies".command_id = 4)) [0m
+Completed in 30ms (View: 24, DB: 0) | 200 OK [http://localhost/templates/new]
+
+
+Processing TemplatesController#create (for 127.0.0.1 at 2009-03-05 16:27:35) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"7b14849d203dbb6557261c203f806334fe159f9c", "template"=>{"command_ids"=>["3"]}}
+  [4;36;1mCommand Load (0.3ms)[0m   [0;1mSELECT * FROM "commands" WHERE ("commands"."id" = 3) [0m
+  [4;35;1mTemplate Create (0.4ms)[0m   [0mINSERT INTO "templates" ("name", "updated_at", "global_options", "created_at") VALUES(NULL, '2009-03-05 21:27:35', NULL, '2009-03-05 21:27:35')[0m
+  [4;36;1mTemplateCommand Create (0.1ms)[0m   [0;1mINSERT INTO "template_commands" ("updated_at", "template_id", "command_id", "created_at") VALUES('2009-03-05 21:27:35', 3, 3, '2009-03-05 21:27:35')[0m
+Redirected to /templates/3
+Completed in 27ms (DB: 1) | 302 Found [http://localhost/templates]
+
+
+Processing TemplatesController#show (for 127.0.0.1 at 2009-03-05 16:27:35) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mTemplate Load (0.2ms)[0m   [0mSELECT * FROM "templates" WHERE ("templates"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering templates/show
+  [4;36;1mCommand Load (0.3ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 3) AND ("commands"."type" = 'PluginCommand')) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 3) AND ("commands"."type" = 'GemCommand')) [0m
+  [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 3) AND ("commands"."type" = 'RakeCommand')) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 3) AND ("commands"."type" = 'GenerateCommand')) [0m
+Completed in 24ms (View: 17, DB: 0) | 200 OK [http://localhost/templates/3]
+** acts_as_taggable_on: initialized properly.

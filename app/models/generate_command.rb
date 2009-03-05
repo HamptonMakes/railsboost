@@ -1,0 +1,2 @@
+class GenerateCommand < Command
+end

@@ -1,0 +1,2 @@
+class GemCommand < Command
+end
