@@ -5,4 +5,13 @@
     = javascript_include_tag "jquery", "application"
     = stylesheet_link_tag "application"
   %html
-    = yield
+    #wrapper
+      #header
+        = image_tag "logo.jpg"
+      #contents
+        = yield
+      #footer
+        == Created by Hampton Catlin (#{link_to "hcatlin", "http://github.com/hcatlin/"}) 
+        == with help from Robert Pitts (#{link_to "rbxbx", "http://github.com/rbxbx"}).
+        %br/
+        = link_to "Download the code", "http://github.com/hcatlin/railsboost/tree/master"

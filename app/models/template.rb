@@ -11,7 +11,7 @@ class Template < ActiveRecord::Base
       if command_group.any?
         result << "# #{type} commands"
         command_group.each do |command|
-          result << "  " + command.to_ruby(global_options)
+          result << command.to_ruby(global_options)
         end
         result << nil
         result << nil

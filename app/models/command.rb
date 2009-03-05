@@ -17,6 +17,8 @@ class Command < ActiveRecord::Base
       option_array = [nil] + option_array
     end
     
-    "#{command_name} '#{name}'#{option_array.join(', ')}"
+    spacing = ",\n" + (" " * (command_name.size + 1))
+    
+    "#{command_name} '#{name}'#{option_array.join(spacing)}"
   end
 end
