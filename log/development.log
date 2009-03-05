@@ -4303,3 +4303,37 @@ Processing TemplatesController#show to rb (for 127.0.0.1 at 2009-03-05 17:06:06)
   [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'RakeCommand')) [0m
   [4;36;1mCommand Load (0.1ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'GenerateCommand')) [0m
 Completed in 124ms (View: 0, DB: 1) | 200 OK [http://localhost/templates/2-hamptons.rb]
+
+
+Processing TemplatesController#show (for 127.0.0.1 at 2009-03-05 17:07:08) [GET]
+  Parameters: {"id"=>"2-hamptons"}
+  [4;35;1mTemplate Load (0.2ms)[0m   [0mSELECT * FROM "templates" WHERE ("templates"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering templates/show
+  [4;36;1mCommand Load (0.5ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'PluginCommand')) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'GemCommand')) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'RakeCommand')) [0m
+  [4;35;1mCommand Load (0.1ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'GenerateCommand')) [0m
+Completed in 27ms (View: 21, DB: 0) | 200 OK [http://localhost/templates/2-hamptons]
+
+
+Processing TemplatesController#show (for 127.0.0.1 at 2009-03-05 17:07:26) [GET]
+  Parameters: {"id"=>"2-hamptons"}
+  [4;36;1mTemplate Load (0.2ms)[0m   [0;1mSELECT * FROM "templates" WHERE ("templates"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering templates/show
+  [4;35;1mCommand Load (0.5ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'PluginCommand')) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'GemCommand')) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'RakeCommand')) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'GenerateCommand')) [0m
+Completed in 26ms (View: 20, DB: 0) | 200 OK [http://localhost/templates/2-hamptons]
+
+
+Processing TemplatesController#show to rb (for 127.0.0.1 at 2009-03-05 17:07:28) [GET]
+  Parameters: {"id"=>"2-hamptons"}
+  [4;35;1mTemplate Load (0.2ms)[0m   [0mSELECT * FROM "templates" WHERE ("templates"."id" = 2) [0m
+  [4;36;1mCommand Load (0.5ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'PluginCommand')) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'GemCommand')) [0m
+  [4;36;1mCommand Load (0.2ms)[0m   [0;1mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'RakeCommand')) [0m
+  [4;35;1mCommand Load (0.2ms)[0m   [0mSELECT "commands".* FROM "commands" INNER JOIN template_commands ON commands.id = template_commands.command_id WHERE (("template_commands".template_id = 2) AND ("commands"."type" = 'GenerateCommand')) [0m
+Completed in 24ms (View: 0, DB: 1) | 200 OK [http://localhost/templates/show/2-hamptons.rb]
