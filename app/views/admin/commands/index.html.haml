@@ -1,0 +1,14 @@
+%h1 Editing Commands
+
+- @commands.group_by(&:type).each do |type, commands|
+  - if !type.blank?
+    %h2
+      = type[0..-8]
+  - else 
+    %h2
+      Misc Commands
+  %table
+    = render :partial => 'command', :collection => commands
+%br/
+%br/
+= button_to 'Create New Command', new_admin_command_path, :method => "get"
