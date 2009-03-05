@@ -1,0 +1,10 @@
+%tr[command]
+  %td
+    %b
+      = command.name
+  %td
+    = command.description
+  %td
+    = button_to "Edit", edit_admin_command_path(command), :method => :get
+  %td
+    = button_to "Delete", admin_command_path(command), :method => :delete

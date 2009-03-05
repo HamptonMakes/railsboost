@@ -1,0 +1,8 @@
+%h1
+  Editing
+  = @command.name
+
+- form_for(@command, :url => admin_command_path(@command)) do |f| 
+  = render :partial => "form", :locals => {:f => f}
+  = submit_tag "Update"
+= button_to "Cancel", admin_commands_path

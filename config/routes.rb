@@ -32,6 +32,10 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :templates
   
+  map.namespace :admin do |admin|
+    admin.resources :commands
+  end
+  
   map.root :controller => "templates"
   
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.

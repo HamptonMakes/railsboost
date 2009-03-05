@@ -1,0 +1,10 @@
+%h1 Creating command
+
+= error_messages_for :command
+
+- form_for(@command, :url => "create") do |f|
+  = render :partial => "form", :locals => {:f => f}
+  %p
+  = submit_tag "Submit"
+
+= link_to 'Back', admin_commands_path
