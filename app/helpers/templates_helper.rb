@@ -3,7 +3,7 @@ module TemplatesHelper
     
     # Pass in either a Command or a string of its name
     if name_or_command.is_a?(String)
-      command = Command.find_by_name(name_or_command) || Command.first
+      command = Command.find_by_name(name_or_command)
     else
       command = name_or_command
     end

@@ -12,7 +12,7 @@ class Admin::CommandsController < ApplicationController
  private
  
   def build_object
-    @current_object ||= params[:type].constantize.create(params[:command])
+    @current_object ||= params[:type].constantize.new(params[:command])
   end
 
 end
