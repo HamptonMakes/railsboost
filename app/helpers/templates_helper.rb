@@ -1,4 +1,23 @@
 module TemplatesHelper
+  
+  def initialize_highlighter
+      # open = "<script src='/javascripts/"
+      # close = ".js' type='text/javascript'></script>"
+      # css_open = "<link href='/stylesheets/syntax/"
+      # css_close = ".css' media='screen' rel='stylesheet' 'type=text/css' />"
+      # puts "#{open}shCore#{close}"
+      # puts "#{open}shBrushRuby#{close}"
+      # puts "#{css_open}shCore#{css_close}"
+      # puts "#{css_open}shThemeDefault#{css_close}"
+      puts "<script type='text/javascript'>SyntaxHighlighter.all();</script>"
+  end
+  
+  def code_block(code)
+    haml_tag :pre, :class => "brush: ruby; light: true;"  do
+      puts code
+    end
+  end
+  
   def check_box_for(name_or_command)
     
     # Pass in either a Command or a string of its name

@@ -2,9 +2,11 @@
 %html
   %body
     %title Rails Boost: Rails Template Generator
-    = javascript_include_tag "jquery", "application"
-    = stylesheet_link_tag "application"
-    = require_syntax_css
+    = javascript_include_tag "jquery", "application", "shCore", "shBrushRuby"
+    = stylesheet_link_tag "application", "syntax/shThemeDefault", "syntax/shCore"
+    - initialize_highlighter
+
+    
   %html
     #wrapper
       #header= image_tag "logo.jpg"
