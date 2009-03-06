@@ -5,13 +5,17 @@ class Template < ActiveRecord::Base
   
   def to_ruby
     result = ["# Created by RailsBoost.com", "# Generated at #{Time.now}", nil]
-    [:plugin, :gem, :rake, :generate].each do |type|
-      command_group = commands.find(:all, :conditions => {:type => "#{type.to_s.capitalize}Command"})
+    
+    
+    [:plugin, :gem, :rake, :generate, ""].each do |type|
+      class_name = "#{type.to_s.capitalize}Command"
+      class_name = nil if class_name == "Command"
+
+      command_group = commands.find(:all, :conditions => {:type => class_name})
       
       if command_group.any?
-        result << "# #{type} commands"
+        result << "############## #{type} commands #################\n"
         command_group.each do |command|
-          # debugger
           result << command.to_ruby(global_options)
         end
         result << nil

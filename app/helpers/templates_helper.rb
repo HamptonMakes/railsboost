@@ -9,12 +9,12 @@ module TemplatesHelper
       # puts "#{open}shBrushRuby#{close}"
       # puts "#{css_open}shCore#{css_close}"
       # puts "#{css_open}shThemeDefault#{css_close}"
-      puts "<script type='text/javascript'>SyntaxHighlighter.all();</script>"
+      puts "<script type='text/javascript'>SyntaxHighlighter.all;</script>"
   end
   
   def code_block(code)
     haml_tag :pre, :class => "brush: ruby; light: true;"  do
-      puts code
+      puts preserve("\n" + code)
     end
   end
   
