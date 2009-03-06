@@ -4,7 +4,7 @@ class Command < ActiveRecord::Base
   serialize :options, Hash
   
   def self.default_options
-    return = {}
+    return {}
   end
   
   def command_name
@@ -21,6 +21,8 @@ class Command < ActiveRecord::Base
       option_array = [nil] + option_array
     end
     
-    "#{command_name} '#{name}'#{option_array.join(', ')}"
+    spacing = ",\n" + (" " * (command_name.size + 1))
+    
+    "#{command_name} '#{name}'#{option_array.join(spacing)}"
   end
 end
