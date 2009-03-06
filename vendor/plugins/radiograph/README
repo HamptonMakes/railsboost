@@ -1,0 +1,45 @@
+Radiograph is a small Rails plugin to expose Ultraviolet (http://ultraviolet.rubyforge.org/) to Rails views.
+Ultraviolet is a syntax highlighting library which makes use of Textpow which parses Textmate bundles (whew!).
+This plugin lets you use Ultraviolet's syntax highlighting capabilities in Rails applications.  It parses a Textmate
+syntax and generates HTML based on a Textmate theme.
+
+=== Usage
+
+You can use it in views like so:
+
+  <%= code("show_menu if current_user") %>
+
+The default theme is 'all_hallows_eve' and the default syntax is 'ruby.'  The above snippet would generate
+some simple XHTML that syntax highlights the code show.  If you don't want to type code(), you can use the 
+convenience alias: c().
+
+  <%= c("my_value ? puts 'Good!' : puts 'Oh noez!'", :theme => 'amy') %>
+
+Note that this example changes the default theme (learn more about the parameters to Radiograph#code in its documentation).
+
+==== CSS is required 
+
+You will also need to require the proper CSS file for the theme(s) you use using the require_syntax_css method.
+
+  <%= require_syntax_css %>
+
+If you've used anything other than the default theme (as I did with the 'amy' theme above), then you'll need to
+link those also.
+
+  <%= require_syntax_css 'amy' %>
+
+You should now have a nicely highlighted block of code on your page.  Look at the documentation for the individual methods
+for more information.
+
+==== Setting defaults
+You can set defaults in environment.rb by setting values on the Radiograph class.
+
+  Radiograph.theme = 'cobalt'
+  Radiograph.syntax = 'lisp'
+
+These values will then become the defaults in your application.
+
+=== Things left...
+Here are some things I'd like to add in the future...
+* Caching -- Ultraviolet is a little slower than I'd like...it may be Oniguruma's fault.  Caching would alleviate some of the problem.
+* Asset hosts -- Right now the CSS is just dumped into your public/ folder; I'd like to hook into Rails and use whatever the app is using.
