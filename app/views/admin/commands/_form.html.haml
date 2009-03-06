@@ -19,3 +19,13 @@
   %br/
   = f.text_area :description
 %br/
+%label
+  Type
+  %br/
+  - if @command.type.blank?
+    = select_tag "command_type", options_for_select(["Plugin", "Gem","Rake Task", ""], "")
+  - else 
+    - type = @command.type[0..-8].capitalize
+    = select_tag "command_type", options_for_select(["Plugin", "Gem","Rake Task", ""], "#{type}")
+%br/
+%br/

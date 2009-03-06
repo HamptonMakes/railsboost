@@ -4,11 +4,11 @@
   - if !type.blank?
     %h2
       = type[0..-8]
+      = button_to "Create New #{type[0..-8].capitalize}", new_admin_command_path , :method => "get", :type => "#{type[0..-8].capitalize}"
   - else 
     %h2
       Misc Commands
+      = button_to 'Create Misc Command', new_admin_command_path, :method => "get"
   %table
     = render :partial => 'command', :collection => commands
-%br/
-%br/
-= button_to 'Create New Command', new_admin_command_path, :method => "get"
+

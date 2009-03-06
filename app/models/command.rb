@@ -3,6 +3,10 @@ class Command < ActiveRecord::Base
   has_many :required_commands, :through => :dependencies
   serialize :options, Hash
   
+  def self.default_options
+    return = {}
+  end
+  
   def command_name
     self.class.to_s[0..-8].downcase
   end
