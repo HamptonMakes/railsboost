@@ -16,7 +16,7 @@ class Command < ActiveRecord::Base
     
     if options.any?
       option_array = options.collect do |key, value|
-        ":#{key} => #{value.inspect}"
+        ":#{key} => #{value.inspect}" if !value.empty?
       end
       option_array = [nil] + option_array
     end

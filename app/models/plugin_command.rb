@@ -1,7 +1,8 @@
 class PluginCommand < Command
   
   def self.default_options 
-    return {git => ""}
+    {:git => "",
+     :svn => ""}
   end
   
 end

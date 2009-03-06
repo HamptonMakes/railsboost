@@ -2,8 +2,8 @@
 
 = error_messages_for :command
 
-- form_for(@command, :url => "create") do |f|
-  = render :partial => "form", :locals => {:f => f}
+- form_tag(admin_commands_path, :method => :post) do
+  = render :partial => "form"
   %p
   = submit_tag "Submit"
 

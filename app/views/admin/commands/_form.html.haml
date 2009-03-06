@@ -1,31 +1,24 @@
-%Label 
+= hidden_field_tag "type", params[:type]
+%label 
   Name
-  = f.text_field :name
+  = text_field :command, :name
 %br/
 %label
   Permalink
-  = f.text_field :permalink
+  = text_field :command, :permalink
 %br/
-%label
-  Options
-  = f.text_field :options
-%br/
-%Label 
-  Url
-  = f.text_field :url
-%br/  
-%Label
-  Description
-  %br/
-  = f.text_area :description
-%br/
-%label
-  Type
-  %br/
-  - if @command.type.blank?
-    = select_tag "command_type", options_for_select(["Plugin", "Gem","Rake Task", ""], "")
-  - else 
-    - type = @command.type[0..-8].capitalize
-    = select_tag "command_type", options_for_select(["Plugin", "Gem","Rake Task", ""], "#{type}")
+- current_object.class.default_options.each do |key, value|
+  .field
+    %label= key
+    = text_field_tag "command[options][#{key}]", ((current_object.options || {})[key] || value)
+.field
+  %label Url
+  = text_field :command, :url
+.field
+  %label Description
+  = text_area :command, :description
+.field
+  %label
+  = text_area :command, :script
 %br/
 %br/

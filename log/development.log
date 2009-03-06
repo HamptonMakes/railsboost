@@ -5034,3 +5034,24 @@ ActionController::RoutingError (No route matches "/stylesheets/admin.css" with {
     ./script/server:3
 
 Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mCommand Create (0.8ms)[0m   [0mINSERT INTO "commands" ("permalink", "name", "script", "options", "updated_at", "type", "url", "description", "created_at") VALUES(NULL, NULL, NULL, NULL, '2009-03-06 00:29:44', NULL, NULL, NULL, '2009-03-06 00:29:44')[0m
+  [4;36;1mCommand Load (63.4ms)[0m   [0;1mSELECT * FROM "commands" ORDER BY commands.id DESC LIMIT 1[0m
+  [4;35;1mCommand Destroy (0.8ms)[0m   [0mDELETE FROM "commands" WHERE "id" = 17[0m
+  [4;36;1mCommand Create (0.4ms)[0m   [0;1mINSERT INTO "commands" ("permalink", "name", "script", "options", "updated_at", "type", "url", "description", "created_at") VALUES(NULL, NULL, NULL, NULL, '2009-03-06 00:51:54', NULL, NULL, NULL, '2009-03-06 00:51:54')[0m
+  [4;35;1mCommand Load (0.4ms)[0m   [0mSELECT * FROM "commands" ORDER BY commands.id DESC LIMIT 1[0m
+  [4;36;1mCommand Load (0.4ms)[0m   [0;1mSELECT * FROM "commands" ORDER BY commands.id DESC LIMIT 1[0m
+  [4;35;1mCommand Load (0.4ms)[0m   [0mSELECT * FROM "commands" ORDER BY commands.id DESC LIMIT 1[0m
+  [4;36;1mCommand Delete all (4.2ms)[0m   [0;1mDELETE FROM "commands" WHERE ("id" IN (41)) [0m
