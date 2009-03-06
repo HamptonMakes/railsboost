@@ -9,7 +9,7 @@
     
   %html
     #wrapper
-      #header= image_tag "logo.jpg"
+      #header= link_to image_tag( "logo.jpg"), root_path
       #contents= yield
       #footer
         == Created by Hampton Catlin (#{link_to "hcatlin", "http://github.com/hcatlin/"}) 

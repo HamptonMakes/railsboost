@@ -11,6 +11,7 @@ class Template < ActiveRecord::Base
       if command_group.any?
         result << "# #{type} commands"
         command_group.each do |command|
+          # debugger
           result << command.to_ruby(global_options)
         end
         result << nil
@@ -20,6 +21,5 @@ class Template < ActiveRecord::Base
     
     result.join("\n")
   end
-  
   
 end
