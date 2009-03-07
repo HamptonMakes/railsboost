@@ -1,4 +1,4 @@
-%h2 Let's Get Going!
+%h2 Build Your Custom Rails Stack
 
 %p 
   Don't you hate having to setup the same shit everytime you 
@@ -23,6 +23,8 @@
   %fieldset
     %legend Testing Frameworks
     = check_box_for "rspec-rails"
+    = check_box_for "cucumber"
+    = check_box_for "thoughtbot-shoulda"
   %fieldset
     %legend Fixture Plugins
     = check_box_for "factory_girl"
@@ -30,5 +32,9 @@
     %legend Resource Plugin
     = check_box_for "make_resourceful"
     = check_box_for "resource_controller"
+  %fieldset
+    %legend Misc
+    = check_box_for "delete default files"
+    = check_box_for "git-ignore"
     
   %button{:type => "submit"} Generate Template

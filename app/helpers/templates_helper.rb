@@ -29,8 +29,25 @@ module TemplatesHelper
     
     # Build the checkbox for this particular one
     haml_tag :div, :class => "command #{command.command_name}" do
-      puts check_box_tag("template[command_ids][]", command.id, false, :command_id => command.id, :id => nil)
-      haml_tag :label, "#{command.name} #{command.command_name}"
+      haml_tag :label do
+        puts check_box_tag("template[command_ids][]", command.id, false, :command_id => command.id, :id => nil)
+        puts "#{command.name} #{command.command_name}"
+      end
+      
+      if (command.description || "").any?
+        description_id = "description_#{command.id}"
+        puts link_to("?", "#", :onclick => "$('##{description_id}').slideToggle('fast'); return false;")
+        
+        haml_tag :div, :class => "description", :id => description_id, :style => "display: none" do
+          # Code sample
+          haml_tag :pre do
+            puts preserve("\n" + command.to_ruby)
+          end
+          
+          # Link if it exists
+          puts link_to("Link", command.url) if (command.url || "").any?
+        end
+      end
       
       if command.required_commands.any?
         haml_tag :div, :class => "requirements", :id => "required_commands_#{command.id}" do

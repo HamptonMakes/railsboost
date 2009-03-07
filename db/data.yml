@@ -147,7 +147,7 @@ commands:
   - - "11"
     - 
     - ""
-    - delete_default_files
+    - delete default files
     - 
     - |-
       run "rm README"
@@ -156,9 +156,9 @@ commands:
       run "rm public/robots.txt"
       run "rm -f public/javascripts/*"
     - 2009-03-05 19:17:30
-    - 2009-03-06 01:30:43
+    - 2009-03-06 23:47:31
     - ""
-    - Cleans up a lot of the files that might clutter your app when you start
+    - Cleans up a lot of the files that might clutter your app when you start.
   - - "12"
     - PluginCommand
     - rspec-rails
@@ -235,6 +235,29 @@ commands:
     - 2009-03-06 21:23:42
     - ""
     - Prototype is a JavaScript Framework that aims to ease development of dynamic web applications.
+  - - "19"
+    - GemCommand
+    - shoulda
+    - thoughtbot-shoulda
+    - |
+      --- !map:HashWithIndifferentAccess 
+      source: http://gems.github.com
+
+    - ""
+    - 2009-03-06 23:54:21
+    - 2009-03-06 23:54:21
+    - http://thoughtbot.com/projects/shoulda
+    - "The Shoulda gem makes it easy to write elegant, understandable, and maintainable Ruby tests. Shoulda consists of test macros, assertions, and helpers added on to the Test::Unit framework. It\xE2\x80\x99s fully compatible with your existing tests, and requires no retooling to use."
+  - - "20"
+    - GenerateCommand
+    - ""
+    - restful-authentication
+    - 
+    - generate("authenticated user sessions")
+    - 2009-03-07 00:01:53
+    - 2009-03-07 00:01:53
+    - http://github.com/technoweenie/restful-authentication/tree/master
+    - Generates the required parts of restful-authentication
 
 --- 
 dependencies: 
@@ -245,11 +268,21 @@ dependencies:
   - created_at
   - updated_at
   records: 
-  - - "1"
+  - - "2"
+    - "12"
     - "4"
-    - "16"
-    - 2009-03-06 01:45:42
-    - 2009-03-06 01:45:42
+    - 2009-03-06 23:30:58
+    - 2009-03-06 23:30:58
+  - - "3"
+    - "12"
+    - "8"
+    - 2009-03-06 23:31:54
+    - 2009-03-06 23:31:54
+  - - "4"
+    - "5"
+    - "20"
+    - 2009-03-07 00:02:31
+    - 2009-03-07 00:02:31
 
 --- 
 templates: 
@@ -295,6 +328,11 @@ templates:
     - 
     - 2009-03-06 21:18:38
     - 2009-03-06 21:18:38
+  - - "8"
+    - 
+    - 
+    - 2009-03-06 23:56:16
+    - 2009-03-06 23:56:16
 
 --- 
 template_commands: 
@@ -550,3 +588,83 @@ template_commands:
     - "18"
     - 2009-03-06 21:18:38
     - 2009-03-06 21:18:38
+  - - "50"
+    - "8"
+    - "1"
+    - 2009-03-06 23:56:16
+    - 2009-03-06 23:56:16
+  - - "51"
+    - "8"
+    - "2"
+    - 2009-03-06 23:56:16
+    - 2009-03-06 23:56:16
+  - - "52"
+    - "8"
+    - "3"
+    - 2009-03-06 23:56:16
+    - 2009-03-06 23:56:16
+  - - "53"
+    - "8"
+    - "4"
+    - 2009-03-06 23:56:16
+    - 2009-03-06 23:56:16
+  - - "54"
+    - "8"
+    - "6"
+    - 2009-03-06 23:56:16
+    - 2009-03-06 23:56:16
+  - - "55"
+    - "8"
+    - "7"
+    - 2009-03-06 23:56:16
+    - 2009-03-06 23:56:16
+  - - "56"
+    - "8"
+    - "8"
+    - 2009-03-06 23:56:16
+    - 2009-03-06 23:56:16
+  - - "57"
+    - "8"
+    - "9"
+    - 2009-03-06 23:56:16
+    - 2009-03-06 23:56:16
+  - - "58"
+    - "8"
+    - "10"
+    - 2009-03-06 23:56:16
+    - 2009-03-06 23:56:16
+  - - "59"
+    - "8"
+    - "11"
+    - 2009-03-06 23:56:16
+    - 2009-03-06 23:56:16
+  - - "60"
+    - "8"
+    - "12"
+    - 2009-03-06 23:56:16
+    - 2009-03-06 23:56:16
+  - - "61"
+    - "8"
+    - "13"
+    - 2009-03-06 23:56:16
+    - 2009-03-06 23:56:16
+  - - "62"
+    - "8"
+    - "14"
+    - 2009-03-06 23:56:16
+    - 2009-03-06 23:56:16
+  - - "63"
+    - "8"
+    - "15"
+    - 2009-03-06 23:56:16
+    - 2009-03-06 23:56:16
+  - - "64"
+    - "8"
+    - "18"
+    - 2009-03-06 23:56:16
+    - 2009-03-06 23:56:16
+  - - "65"
+    - "8"
+    - "19"
+    - 2009-03-06 23:56:16
+    - 2009-03-06 23:56:16

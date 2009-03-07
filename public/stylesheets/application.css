@@ -18,7 +18,8 @@ button {
   margin-bottom: 100px; }
 
 pre {
-  font-size: 10px; }
+  font-size: 10px;
+  margin: 0px; }
 
 #wrapper {
   margin: 0 auto;
@@ -44,3 +45,9 @@ fieldset {
 
 .requirements {
   margin-left: 20px; }
+
+.description {
+  border: 1px solid #999;
+  padding: 0px 10px 0px 10px;
+  margin-top: 10px;
+  font-size: 0.8em; }
