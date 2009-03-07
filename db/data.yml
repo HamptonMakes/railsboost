@@ -245,9 +245,9 @@ commands:
 
     - ""
     - 2009-03-06 23:54:21
-    - 2009-03-06 23:54:21
+    - 2009-03-07 04:35:39
     - http://thoughtbot.com/projects/shoulda
-    - "The Shoulda gem makes it easy to write elegant, understandable, and maintainable Ruby tests. Shoulda consists of test macros, assertions, and helpers added on to the Test::Unit framework. It\xE2\x80\x99s fully compatible with your existing tests, and requires no retooling to use."
+    - Shoulda gem makes it easy to write elegant, understandable, and maintainable Ruby tests.
   - - "20"
     - GenerateCommand
     - ""
