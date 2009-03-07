@@ -8,9 +8,7 @@ class Admin::CommandsController < ApplicationController
       format.html
       format.yaml do
         @commands.collect! do |command|
-          a = command.attributes
-          a.delete('id')
-          a
+          command.attributes
         end
         render :text => @commands.to_yaml
       end
