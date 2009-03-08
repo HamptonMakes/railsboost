@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">
-  <channel>
-    <title>RockCast Italia</title>
-    <link>http://rockcastitalia.com/</link>
-    <description>novità</description>
-    <generator>Feeder 220 http://reinventedsoftware.com/feeder/</generator>
-  </channel>
-</rss>
