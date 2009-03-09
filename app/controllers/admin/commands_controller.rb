@@ -1,4 +1,5 @@
 class Admin::CommandsController < ApplicationController
+  before_filter :require_user
   layout 'admin'
   
   make_resourceful do

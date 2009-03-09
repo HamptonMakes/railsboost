@@ -16,8 +16,10 @@ module TemplatesHelper
   end
   
   def code_block(code)
-    haml_tag :pre, :class => "brush: ruby; light: true;"  do
-      puts preserve("\n" + code)
+    haml_tag :div, :class => "syndiv" do
+      haml_tag :pre, :class => "brush: ruby; light: true;"  do
+        puts preserve("\n" + code)
+      end
     end
   end
   

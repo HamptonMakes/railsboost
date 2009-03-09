@@ -31,6 +31,10 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   map.resources :templates
+  map.resource  :user_session
+  map.login "/login", :controller => 'user_sessions', :action => 'new'
+  map.logout "/logout", :controller => 'user_sessions', :action => 'destroy'
+
   
   map.namespace :admin do |admin|
     admin.resources :commands

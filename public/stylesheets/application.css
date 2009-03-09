@@ -51,3 +51,8 @@ fieldset {
   padding: 0px 10px 0px 10px;
   margin-top: 10px;
   font-size: 0.8em; }
+
+.align_right {
+	text-align:right;
+	padding: 0 0 5px 0;
+}
