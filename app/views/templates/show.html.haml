@@ -1,2 +1,17 @@
 = code_block(@rails_template.to_ruby)
+
+
+
+.build_command
+  %input{:type => "textfield", :id => "app_name_field", :value => "myapp"}/
+
+  .command
+  
+    %br/
+    rails 
+    %span#app_name myapp
+    \-m 
+    = "http://www.railsboost.com" + url_for(:format => "rb")
+  
+
 = link_to "Download the File", :format => "rb"
