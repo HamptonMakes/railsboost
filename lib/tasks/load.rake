@@ -8,7 +8,7 @@ namespace :command do
       command = Command.find_by_name(command_attr['name']) || Command.new
       command_attr.delete("id")
       command.attributes = command_attr
-      command.type = command_attr("type")
+      command.type = command_attr["type"]
       command.save
     end
   end

@@ -1,3 +1,22 @@
 = code_block(@rails_template.to_ruby)
+<<<<<<< HEAD:app/views/templates/show.html.haml
 .align_right
   = link_to image_tag("download.png", :alt => "Download File"), :format => "rb"
+=======
+
+
+
+.build_command
+  %input{:type => "textfield", :id => "app_name_field", :value => "myapp"}/
+
+  .command
+  
+    %br/
+    rails 
+    %span#app_name myapp
+    \-m 
+    = "http://www.railsboost.com" + url_for(:format => "rb")
+  
+
+= link_to "Download the File", :format => "rb"
+>>>>>>> 63fe2c997412ccc736c3455eb8df07bc4adf673d:app/views/templates/show.html.haml
