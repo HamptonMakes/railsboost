@@ -1,5 +1,5 @@
 class Admin::CommandsController < ApplicationController
-  before_filter :ip_check
+  before_filter :ip_check, :except => "index"
   layout 'admin'
   
   make_resourceful do
@@ -23,7 +23,9 @@ class Admin::CommandsController < ApplicationController
  private
  
   def ip_check
-    (Rails.env != "production") || (request.remote_addr == "76.106.176.67")
+    if Rails.env == "production" && request.remote_addr != "76.106.176.67"
+      render :text => "GETTHEFUCKOUT"
+    end
   end
  
   def build_object
