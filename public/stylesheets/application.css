@@ -19,7 +19,15 @@ button {
 
 pre {
   font-size: 10px;
-  margin: 0px; }
+  margin: 0px;
+  border: 1px dotted;
+  background: #eee;
+  padding: 10px;
+  font-size: 130%;
+  margin-bottom: 30px; }
+
+#download {
+  margin-bottom: 30px; }
 
 #wrapper {
   margin: 0 auto;
@@ -34,6 +42,9 @@ pre {
     padding-bottom: 3px; }
   #wrapper #footer {
     font-size: 73%; }
+
+.float_right {
+  float: right; }
 
 fieldset {
   border: 0px;
@@ -51,8 +62,3 @@ fieldset {
   padding: 0px 10px 0px 10px;
   margin-top: 10px;
   font-size: 0.8em; }
-
-.align_right {
-	text-align:right;
-	padding: 0 0 5px 0;
-}

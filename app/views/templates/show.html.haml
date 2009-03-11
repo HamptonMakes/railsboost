@@ -1,4 +1,22 @@
-= code_block(@rails_template.to_ruby)
 
-.align_right
-  = link_to image_tag("download.png", :alt => "Download File"), :format => "rb"
+%h2 Generate Your App
+
+%p
+  Just enter the line below into your command line and you should be up and running!
+
+%em
+  Requires Rails 2.3+
+
+%pre#gen
+  == rails newapp #{template_short_url(:host => "railsboost.com")}
+
+
+
+.float_right
+  = link_to_function(image_tag("code.png", :alt => "Show Code"), "$('#code_block').slideDown('fast')")
+
+#download
+  = link_to(image_tag("download.png", :alt => "Download File"), :format => "rb")
+
+  #code_block{:style => "display: none;"}
+    = code_block(@rails_template.to_ruby)

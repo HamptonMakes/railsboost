@@ -1,15 +1,6 @@
 module TemplatesHelper
   
   def initialize_highlighter
-      # open = "<script src='/javascripts/"
-      # close = ".js' type='text/javascript'></script>"
-      # css_open = "<link href='/stylesheets/syntax/"
-      # css_close = ".css' media='screen' rel='stylesheet' 'type=text/css' />"
-      # puts "#{open}shCore#{close}"
-      # puts "#{open}shBrushRuby#{close}"
-      # puts "#{css_open}shCore#{css_close}"
-      # puts "#{css_open}shThemeDefault#{css_close}"
-      # puts "<script type='text/javascript'>SyntaxHighlighter.all;</script>"
       haml_tag :script, :type => 'text/javascript' do
         puts "SyntaxHighlighter.all();"
       end

@@ -29,7 +29,7 @@ $(function() {
   
   $("input[type=checkbox]").change()
   
-  $("#app_name_field").keypress(function(event) {
+  $("#app_name_field").keyup(function(event) {
     $("#app_name").html($(event.target).val());
-  }).keypress();
+  }).keyup();
 })
