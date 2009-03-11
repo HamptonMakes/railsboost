@@ -23,6 +23,7 @@ class Admin::CommandsController < ApplicationController
  private
  
   def ip_check
+    logger.warn request.remote_addr.inspect
     if Rails.env == "production" && request.remote_addr != "76.106.176.67"
       render :text => "GETTHEFUCKOUT"
     end
