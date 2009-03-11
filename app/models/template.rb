@@ -4,7 +4,7 @@ class Template < ActiveRecord::Base
   serialize :global_options, Hash
   
   def to_ruby
-    result = ["# Created by RailsBoost.com", "# Generated at #{Time.now}", nil]
+    result = ["# Created by RailsBoost.com", "# Generated at #{Time.now}", "# Generator by Hampton Catlin", nil]
     
     
     [:plugin, :gem, :rake, :generate, ""].each do |type|

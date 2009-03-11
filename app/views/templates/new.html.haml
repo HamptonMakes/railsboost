@@ -17,9 +17,10 @@
     = check_box_for "erubis"
   %fieldset
     %legend Pick Your Javascript Framework
+    %em Prototype is installed by default
     = check_box_for "jquery"
     = check_box_for "jquery-form"
-    = check_box_for "prototype"
+
   %fieldset
     %legend Testing Frameworks
     = check_box_for "rspec-rails"
@@ -32,6 +33,10 @@
     %legend Resource Plugin
     = check_box_for "make_resourceful"
     = check_box_for "resource_controller"
+  %fieldset
+    %legend Attachment Helper
+    = check_box_for "attachment_fu"
+    = check_box_for "paperclip"
   %fieldset
     %legend Misc
     = check_box_for "delete default files"
