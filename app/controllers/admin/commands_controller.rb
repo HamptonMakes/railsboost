@@ -1,5 +1,5 @@
 class Admin::CommandsController < ApplicationController
-  before_filter :require_user
+  before_filter :ip_check
   layout 'admin'
   
   make_resourceful do
@@ -21,6 +21,12 @@ class Admin::CommandsController < ApplicationController
   end
   
  private
+ 
+  def ip_check
+    if Rails.env != "development"
+      logger.debug(request.remote_addr != "11")
+    end
+  end
  
   def build_object
     @current_object ||= params[:type].constantize.new(params[:command])
