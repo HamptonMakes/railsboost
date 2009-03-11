@@ -1,13 +1,13 @@
 !!!
 %html
-  %body
+  %head
     %title Rails Boost: Rails Template Generator
     = javascript_include_tag "jquery", "application", "shCore", "shBrushRuby"
     = stylesheet_link_tag "application", "syntax/shThemeDefault", "syntax/shCore"
     - initialize_highlighter
 
     
-  %html
+  %body
     #wrapper
       #header= link_to image_tag( "logo.jpg"), root_path
       #contents= yield
@@ -16,3 +16,13 @@
         == with help from Robert Pitts (#{link_to "rbxbx", "http://github.com/rbxbx"}).
         %br/
         = link_to "Download the code", "http://github.com/hcatlin/railsboost/tree/master"
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  try {
+  var pageTracker = _gat._getTracker("UA-7869400-1");
+  pageTracker._trackPageview();
+  } catch(err) {}</script>
