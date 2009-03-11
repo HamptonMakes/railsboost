@@ -3,7 +3,7 @@ Mime::Type.register "text", :rb
 
 class TemplatesController < ApplicationController
   make_resourceful do
-    build :all
+    build :all, :except => [:delete, :update, :edit]
     
     response_for :show do |format|
       format.html
