@@ -23,9 +23,7 @@ class Admin::CommandsController < ApplicationController
  private
  
   def ip_check
-    if Rails.env != "development"
-      logger.debug(request.remote_addr != "11")
-    end
+    (Rails.env != "production") || (request.remote_addr == "76.106.176.67")
   end
  
   def build_object
