@@ -14,7 +14,7 @@ module TemplatesHelper
     end
   end
   
-  def check_box_for(name_or_command)
+  def check_box_for(name_or_command, options = {})
     
     # Pass in either a Command or a string of its name
     if name_or_command.is_a?(String)
@@ -32,6 +32,9 @@ module TemplatesHelper
       
       if (command.description || "").any?
         description_id = "description_#{command.id}"
+        if options[:suggested]
+          #haml_tag :small, "suggested"
+        end
         puts link_to("?", "#", :onclick => "$('##{description_id}').slideToggle('fast'); return false;")
         
         haml_tag :div, :class => "description", :id => description_id, :style => "display: none" do
@@ -40,15 +43,19 @@ module TemplatesHelper
             puts preserve("\n" + command.to_ruby)
           end
           
-          # Link if it exists
-          puts link_to("Link", command.url) if (command.url || "").any?
+          if (command.url || "").any?
+            haml_tag :div, :class => "more_info" do
+              # Link if it exists
+              puts link_to("Home Page", command.url, :target => "_blank") 
+            end
+          end
         end
       end
       
       if command.required_commands.any?
         haml_tag :div, :class => "requirements", :id => "required_commands_#{command.id}" do
           command.required_commands.each do |required_command|
-            check_box_for(required_command)
+            check_box_for(required_command, :suggested => true)
           end
         end
       end

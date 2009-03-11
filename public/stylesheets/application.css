@@ -17,7 +17,7 @@ button {
   margin-left: 180px;
   margin-bottom: 100px; }
 
-pre {
+pre#gen {
   font-size: 10px;
   margin: 0px;
   border: 1px dotted;
@@ -25,6 +25,10 @@ pre {
   padding: 10px;
   font-size: 130%;
   margin-bottom: 30px; }
+
+small {
+  color: darkred;
+  font-style: italic; }
 
 #download {
   margin-bottom: 30px; }
@@ -56,6 +60,11 @@ fieldset {
 
 .requirements {
   margin-left: 20px; }
+
+.more_info {
+  margin-left: 30px;
+  font-size: 120%;
+  padding: 0px 10px 10px 10px; }
 
 .description {
   border: 1px solid #999;
