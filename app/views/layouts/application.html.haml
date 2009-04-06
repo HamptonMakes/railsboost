@@ -13,7 +13,10 @@
       #contents= yield
       #footer
         = puts tweet_this
-        == | Follow updates on twitter #{link_to "@hcatlin", "http://www.twitter.com/hcatlin"}
+        = puts digg_this
+        = puts delicious_this
+        %br/
+        == Follow updates on twitter #{link_to "@hcatlin", "http://www.twitter.com/hcatlin"}
         %br/
         %br/
         == Created by Hampton Catlin (#{link_to "hcatlin", "http://github.com/hcatlin/"}) 
