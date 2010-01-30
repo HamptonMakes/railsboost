@@ -24,10 +24,10 @@ module TemplatesHelper
     end
     
     # Build the checkbox for this particular one
-    haml_tag :div, :class => "command #{command.command_name}" do
+    haml_tag :div, :class => "command #{command.category}" do
       haml_tag :label do
         puts check_box_tag("template[command_ids][]", command.id, false, :command_id => command.id, :id => nil)
-        puts "#{command.name} #{command.command_name}"
+        puts "#{command.name} #{command.category}"
       end
       
       if (command.description || "").any?
