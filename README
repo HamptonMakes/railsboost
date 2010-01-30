@@ -10,7 +10,7 @@ more productive.
 
 0) Get the code from http://github.com/hcatlin/railsboost/tree/master
 1) Migrate the DB
-2) Execute `rake command:load` which grabs all of the commands from the remote server
+2) Execute `rake commands:load` which grabs all of the commands from the remote server
 3) Read the TODO file
 4) Start hacking!
 
