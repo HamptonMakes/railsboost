@@ -28,7 +28,7 @@ class Command < ActiveRecord::Base
   def option_array
     if options.present?
       option_array = options.map do |key, value|
-        if value.present?
+        if !value.nil? && (!value.respond_to?(:empty?) || !value.empty?)
           ":#{key} => #{value.inspect}"
         else
           nil
