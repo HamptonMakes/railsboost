@@ -22,22 +22,22 @@ class Command < ActiveRecord::Base
   end
 
   def option_array
-    returning [] do |option_array|
-
-      if options.present?
-
-        option_array = options.collect do |key, value|
-          ":#{key} => #{value.inspect}" if value.present?
+    if options.present?
+      option_array = options.map do |key, value|
+        if value.present?
+          ":#{key} => #{value.inspect}"
+        else
+          nil
         end
-
-        option_array = [nil] + option_array.compact
       end
-
+      [nil] + option_array.compact
+    else
+      []
     end
   end
 
   def spacing
-    @spacing ||= ",\n" + (" " * (category.size + 1))
+    @spacing ||= ", "
   end
 
 end
