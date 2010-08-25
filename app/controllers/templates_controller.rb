@@ -1,5 +1,3 @@
-Mime::Type.register "text", :rb
-
 class TemplatesController < ApplicationController
   make_resourceful do
     build :all, :except => [:delete, :update, :edit]
