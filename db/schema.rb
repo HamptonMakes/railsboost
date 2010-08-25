@@ -12,36 +12,36 @@
 ActiveRecord::Schema.define(:version => 20090310214842) do
 
   create_table "commands", :force => true do |t|
-    t.string   "type"
-    t.string   "permalink"
-    t.string   "name"
-    t.text     "options"
-    t.text     "script"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "url"
-    t.string   "description"
+    t.string    "type"
+    t.string    "permalink"
+    t.string    "name"
+    t.text      "options"
+    t.text      "script"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "url"
+    t.string    "description"
   end
 
   create_table "dependencies", :force => true do |t|
-    t.integer  "command_id"
-    t.integer  "required_command_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "command_id"
+    t.integer   "required_command_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "template_commands", :force => true do |t|
-    t.integer  "template_id"
-    t.integer  "command_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "template_id"
+    t.integer   "command_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "templates", :force => true do |t|
-    t.string   "name"
-    t.text     "global_options"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "name"
+    t.text      "global_options"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
 end
