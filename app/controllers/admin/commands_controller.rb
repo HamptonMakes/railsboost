@@ -25,7 +25,7 @@ class Admin::CommandsController < ApplicationController
   # Yes, this is a hack, but its not worth it at this point to write a whole auth system
   def ip_check
     logger.warn request.remote_addr.inspect
-    if Rails.env == "production" && !request.remote_ip.include?("99.166.163.112")
+    if Rails.env == "production" && !["77.250.47.10", "99.166.163.112"].include?(request.remote_ip)
       render :text => "GETTHEFUCKOUT"
     end
   end
