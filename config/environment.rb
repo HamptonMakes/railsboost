@@ -5,7 +5,7 @@
 # ENV['RAILS_ENV'] ||= 'production'
 
 # Specifies gem version of Rails to use when vendor/rails is not present
-RAILS_GEM_VERSION = '2.2.2' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
@@ -55,19 +55,14 @@ Rails::Initializer.run do |config|
   # Make sure the secret is at least 30 characters and all random, 
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
-    :session_key => '_railsboost_session',
-    :secret      => '3a5cd1caaff29906f26d9c739519a594760f258fd917ad7f3ea57e270b22e3e8d1daf615db7b8098a80377e964d3b586ba949713e1b3219db36077e92d94ac20'
+    :key    => '_railsboost_session',
+    :secret => '3a5cd1caaff29906f26d9c739519a594760f258fd917ad7f3ea57e270b22e3e8d1daf615db7b8098a80377e964d3b586ba949713e1b3219db36077e92d94ac20'
   }
 
   # Use the database for sessions instead of the cookie-based default,
   # which shouldn't be used to store highly confidential information
   # (create the session table with "rake db:sessions:create")
   # config.action_controller.session_store = :active_record_store
-
-  # Use SQL instead of Active Record's schema dumper when creating the test database.
-  # This is necessary if your schema can't be completely dumped by the schema dumper,
-  # like if you have constraints or database-specific column types
-  # config.active_record.schema_format = :sql
 
   # Activate observers that should always be running
   # Please note that observers generated using script/generate observer need to have an _observer suffix
