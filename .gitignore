@@ -1,3 +1,4 @@
 log/*
 *.sqlite3
 .D*
+tmp
