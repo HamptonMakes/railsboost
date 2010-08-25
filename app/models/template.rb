@@ -1,7 +1,18 @@
 class Template < ActiveRecord::Base
-  has_many :template_commands
+  has_many :template_commands, :dependent => :delete_all
   has_many :commands, :through => :template_commands
   serialize :global_options, Hash
+
+  def self.find_most_recent
+    find(:first, :order => 'created_at DESC')
+  end
+  
+  def self.delete_old
+    most_recent = find_most_recent
+    if most_recent
+      destroy_all(['created_at < ?', most_recent.created_at - 1.day.ago])
+    end
+  end
 
   def to_ruby
     result = ["# Created by RailsBoost.com", "# Generated at #{Time.now}", "# Generator by Hampton Catlin", nil]

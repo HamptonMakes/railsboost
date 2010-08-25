@@ -1,0 +1,12 @@
+%h1 Templates
+
+%p
+  =h flash[:message]
+
+%p
+  There are currently
+  = @count
+  templates, the most recent one from
+  = "#{@most_recent.created_at}."
+
+= button_to 'Delete older templates', :action => 'delete_old', :method => 'post'
