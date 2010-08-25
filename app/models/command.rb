@@ -12,6 +12,10 @@ class Command < ActiveRecord::Base
     return default_script unless description.present?
     "# #{description}\n" + default_script
   end
+  
+  def display_name
+    "#{name} #{category}"
+  end
 
   def category
     self.class.to_s[0..-8].downcase
