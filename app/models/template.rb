@@ -10,7 +10,7 @@ class Template < ActiveRecord::Base
   def self.delete_old
     most_recent = find_most_recent
     if most_recent
-      destroy_all(['created_at < ?', most_recent.created_at - 1.day.ago])
+      destroy_all(['created_at < ?', most_recent.created_at - 1.day])
     end
   end
 
