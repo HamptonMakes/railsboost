@@ -6,6 +6,10 @@ class Command < ActiveRecord::Base
   def self.default_options
     {}
   end
+  
+  def class_name
+    return self.class.name
+  end
 
   def to_ruby(global_options = {})
     if script.present?

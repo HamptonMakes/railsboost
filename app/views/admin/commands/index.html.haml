@@ -1,6 +1,6 @@
 %h1 Editing Commands
 
-- @commands.group_by(&:type).each do |type, commands|
+- @commands.group_by(&:class_name).each do |type, commands|
   - if !type.blank?
     %h2
       = type[0..-8]
