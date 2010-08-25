@@ -8,9 +8,19 @@ class Command < ActiveRecord::Base
   end
 
   def to_ruby(global_options = {})
-    return script if script.present?
-    return default_script unless description.present?
-    "# #{description}\n" + default_script
+    if script.present?
+      if description.present?
+        "# #{description}\n#{script}"
+      else
+        script
+      end
+    else
+      if description.present?
+        "# #{description}\n#{default_script}"
+      else
+        default_script
+      end
+    end
   end
   
   def display_name
